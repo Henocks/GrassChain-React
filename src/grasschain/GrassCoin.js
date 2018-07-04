@@ -13,17 +13,31 @@ class GrassCoin extends React.Component{
         var GrassChain = new web3.eth.Contract(ABI, contractAddr);
         var GSCID = 2;
 
-        Promise.all([getAddress()]).then(function (address) {
-            console.log(address[0]);
-            GrassCoin.methods.balanceOf(address[0]).call().then(function (result) {
-                console.log(result);
-            })
-        })
-
         GrassChain.methods.GSCCount().call().then(function (result) {
             console.log(result);
         });
 
+        //getAddress and create purchase GSC
+        Promise.all([getAddress()]).then(function (address) {
+            console.log(address[0]);
+            GrassCoin.methods.balanceOf(address[0]).call().then(function (result) {
+                console.log(result);
+            });
+            GrassChain.methods.pay(GSCID).send(
+                {
+                    from:address[0].toString(),
+                    to:contractAddr,
+                    value:web3.utils.toWei('0.01', 'ether')
+                }).then(function (result) {
+                    console.log("Sent done!");
+                    console.log(result);
+                }, function (reason) {
+                    console.log("Error!");
+                    console.log(reason);
+            });
+        })
+
+        //getGSCID
         Promise.all([getGSCData(GSCID)]).then(function (data){
             console.log("GSC Data Print!");
             console.log(data);
@@ -50,7 +64,7 @@ class GrassCoin extends React.Component{
     }
     render(){
         return(
-            <h1>GRC Wallet!</h1>
+            <h1>GRC Wallet Works!</h1>
         );
     }
 }
