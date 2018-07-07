@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import GrassChain from './grasschain/GrassChain';
 import GrassCoin from './grasschain/GrassCoin';
 import Navigator from './components/navigator/Navigator';
 import Content from './components/content/Content';
@@ -13,6 +14,7 @@ class App extends Component {
     render() {
         return (
             <div>
+                <GrassChain/>
                 <GrassCoin/>
                 <Navigator/>
                 <Content/>
