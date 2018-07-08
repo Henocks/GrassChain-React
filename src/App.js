@@ -14,9 +14,9 @@ class App extends Component {
     render() {
         return (
             <div>
+                <Navigator/>
                 <GrassChain/>
                 <GrassCoin/>
-                <Navigator/>
                 <Content/>
                 <Footer/>
             </div>

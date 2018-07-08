@@ -5,6 +5,12 @@ import React from 'react';
 class Navigator extends React.Component {
     render(){
         return (
+            <nav>
+                <h2>Navigator -------------------------</h2>
+            </nav>
+        );
+        /*
+        return (
             <nav id="mainNav">
                 <div id="navbarResponsive">
                     <ul>
@@ -27,6 +33,7 @@ class Navigator extends React.Component {
                 </div>
             </nav>
         );
+        */
     }
 }
 
