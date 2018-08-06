@@ -18,7 +18,6 @@ class GrassCoin extends React.Component{
         var web3 = new Web3(Web3.givenProvider);
         var GrassCoin = new web3.eth.Contract(GABI, grcAddr);
 
-
         getAddress().then(function (address) {
             GrassCoin.methods.balanceOf(address).call().then(function (balance) {
                 this.setState({
