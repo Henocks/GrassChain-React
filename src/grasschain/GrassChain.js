@@ -83,7 +83,7 @@ class GrassChain extends React.Component{
         let web3 = new Web3(Web3.givenProvider);
         let GrassChain = new web3.eth.Contract(ABI, contractAddr);
 
-        GrassChain.methods.pay(2).send(
+        GrassChain.methods.pay(2).send(         // TO-DO : need to be refactored! - Dummy data.
             {
                 from:'0x8CAd9B4941aAfb67b5A5e6DeA657Db2d4ea7b757',
                 to:contractAddr,
@@ -97,15 +97,15 @@ class GrassChain extends React.Component{
         });
     }
 
-    render(){
-        return(
-            <div>
-                <h1>GrassChain Component Works!</h1>
-                <h2>Ethereum Wallet Address : {this.state.userAddress} </h2>
-                <button onClick={this.createGSC}>Create GSC!</button>
-            </div>
-        );
-    }
+  render(){
+    return(
+      <div>
+        <h1>GrassChain Component Works!</h1>
+        <h2>Ethereum Wallet Address : {this.state.userAddress} </h2>
+        <button onClick={this.createGSC}>Create GSC!</button>
+       </div>
+    );
+  }
 }
 
 export default GrassChain;
