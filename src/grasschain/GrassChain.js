@@ -64,7 +64,8 @@ class GrassChain extends React.Component {
 			console.log(GSCList);
 			console.log(GSCRatio);
 			console.log(GSCTimeStamp);
-			console.log(GSCAddr);
+      console.log(GSCAddr);
+      
 			return 0;
 		}
 		async function getAddress() {
