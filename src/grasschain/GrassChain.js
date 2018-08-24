@@ -11,8 +11,8 @@ class GrassChain extends React.Component {
 
 	numberComma(x) {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  
+	}
+
 	componentWillMount() {
 		const ABI = [{ "constant": true, "inputs": [], "name": "GSCCount", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "getGSCHistory", "outputs": [{ "name": "history", "type": "address[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "uint256" }], "name": "GSCList", "outputs": [{ "name": "mainWallet", "type": "address" }, { "name": "value", "type": "uint256" }, { "name": "deposit", "type": "uint256" }, { "name": "Gchain_all", "type": "uint256" }, { "name": "status", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "verify", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "getGSCRatio", "outputs": [{ "name": "ratio", "type": "uint256[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "pay", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": true, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "getGSCAddr", "outputs": [{ "name": "Gchain", "type": "address[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "Gchain", "type": "address[]" }, { "name": "value", "type": "uint256" }, { "name": "ratio", "type": "uint256[]" }], "name": "createGSC", "outputs": [{ "name": "GSCID", "type": "uint256" }], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": false, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "abort", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "GSCID", "type": "uint256" }], "name": "getGSCTimestamp", "outputs": [{ "name": "timestamp", "type": "uint256[]" }], "payable": false, "stateMutability": "view", "type": "function" }, { "anonymous": false, "inputs": [], "name": "aborted", "type": "event" }, { "anonymous": false, "inputs": [], "name": "purchaseConfirmed", "type": "event" }, { "anonymous": false, "inputs": [], "name": "paymentDone", "type": "event" }];
 		const contractAddr = "0xE8720CB8b80ffb4D93BeE736C624dc547603fc49";
@@ -33,7 +33,6 @@ class GrassChain extends React.Component {
 			console.log(result);
 		});
 
-		//getAddress and create purchase GSC
 		Promise.all([getAddress(), getGSCData(GSCID)]).then(function (address, GSCData) {
 			console.log("User Address : " + address[0]);
 			console.log("GSC Data : " + GSCData);
@@ -65,16 +64,16 @@ class GrassChain extends React.Component {
 			console.log(GSCList);
 			console.log(GSCRatio);
 			console.log(GSCTimeStamp);
-      console.log(GSCAddr);
-      
+			console.log(GSCAddr);
+
 			return 0;
 		}
-    
-    async function getAddress() {
+
+		async function getAddress() {
 			let Adr = await web3.eth.getAccounts();
 			return Adr[0];
-    }
-    
+		}
+
 	}
 
 	createGSC() {
@@ -104,10 +103,10 @@ class GrassChain extends React.Component {
 				<h2>Ethereum Wallet Address : {this.state.userAddress} </h2>
 				<button onClick={this.createGSC}>Create GSC!</button>
 			</div>
-    );
-    
-  }
-  
+		);
+
+	}
+
 }
 
 export default GrassChain;
