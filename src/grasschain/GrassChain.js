@@ -9,7 +9,7 @@ class GrassChain extends React.Component {
 		};
 	}
 
-	numberComma(x) {
+	numberComma = (x) => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
@@ -50,7 +50,7 @@ class GrassChain extends React.Component {
 							console.log("Error!");
 							console.log(reason);
 			});
-			*/
+			*/ㄹ
 		});
 
 		async function getGSCData(GSCID) {
