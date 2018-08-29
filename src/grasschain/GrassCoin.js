@@ -34,7 +34,7 @@ class GrassCoin extends React.Component{
             });
         });
 
-        async function getAddress() {
+        const getAddress = async () => {
             const Adr = await web3.eth.getAccounts();
             return Adr[0];
         }
