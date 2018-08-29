@@ -53,7 +53,7 @@ class GrassChain extends React.Component {
 			*/ㄹ
 		});
 
-		async function getGSCData(GSCID) {
+		const getGSCData = async (GSCID) => {
 			let [GSCList, GSCRatio, GSCTimeStamp, GSCAddr] = await Promise.all(
 				[
 					GrassChain.methods.GSCList(GSCID).call(),
@@ -69,11 +69,10 @@ class GrassChain extends React.Component {
 			return 0;
 		}
 
-		async function getAddress() {
+		const getAddress = async () => {
 			let Adr = await web3.eth.getAccounts();
 			return Adr[0];
 		}
-
 	}
 
 	createGSC() {

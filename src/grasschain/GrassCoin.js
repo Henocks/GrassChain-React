@@ -17,14 +17,14 @@ class GrassCoin extends React.Component{
         const web3 = new Web3(Web3.givenProvider);
         const GrassCoin = new web3.eth.Contract(GABI, grcAddr);
 
-        getAddress().then(function (address) {
-            GrassCoin.methods.balanceOf(address).call().then(function (balance) {
+        getAddress().then((address) => {
+            GrassCoin.methods.balanceOf(address).call().then((balance) => {
                 this.setState({
                     userAddress: address,
                     GRCBalance: balance
                 })
-            }.bind(this))
-        }.bind(this));
+            })
+        });
 
         //getAddress and create purchase GSC
         Promise.all([getAddress()]).then(function (address) {
@@ -40,9 +40,10 @@ class GrassCoin extends React.Component{
         }
     }
     render(){
-        function numberComma(x) {
+        const numberComma = (x) => {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
+
         return(
             <div>
                 <h1><br /><br />GrassCoin Component Works!</h1>
