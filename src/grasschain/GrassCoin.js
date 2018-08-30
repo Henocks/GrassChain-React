@@ -27,7 +27,7 @@ class GrassCoin extends React.Component{
         });
 
         //getAddress and create purchase GSC
-        Promise.all([getAddress()]).then(function (address) {
+        Promise.all([getAddress()]).then((address) => {
             console.log(address[0]);
             GrassCoin.methods.balanceOf(address[0]).call().then(function (result) {
                 console.log(result);
