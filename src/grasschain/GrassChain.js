@@ -23,7 +23,7 @@ class GrassChain extends React.Component {
 
 		console.log(Promise.resolve(getAddress()));
 
-		getAddress().then(function (address) {
+		getAddress().then((address) => {
 			this.setState({
 				userAddress: address
 			})
