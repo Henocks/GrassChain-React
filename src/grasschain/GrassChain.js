@@ -33,7 +33,7 @@ class GrassChain extends React.Component {
 			console.log(result);
 		});
 
-		Promise.all([getAddress(), getGSCData(GSCID)]).then(function (address, GSCData) {
+		Promise.all([getAddress(), getGSCData(GSCID)]).then((address, GSCData) => {
 			console.log("User Address : " + address[0]);
 			console.log("GSC Data : " + GSCData);
 
@@ -54,7 +54,7 @@ class GrassChain extends React.Component {
 		});
 
 		const getGSCData = async (GSCID) => {
-			let [GSCList, GSCRatio, GSCTimeStamp, GSCAddr] = await Promise.all(
+			const [GSCList, GSCRatio, GSCTimeStamp, GSCAddr] = await Promise.all(
 				[
 					GrassChain.methods.GSCList(GSCID).call(),
 					GrassChain.methods.getGSCRatio(GSCID).call(),
@@ -70,7 +70,7 @@ class GrassChain extends React.Component {
 		}
 
 		const getAddress = async () => {
-			let Adr = await web3.eth.getAccounts();
+			const Adr = await web3.eth.getAccounts();
 			return Adr[0];
 		}
 	}
