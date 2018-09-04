@@ -89,7 +89,7 @@ class GrassChain extends React.Component {
 			}).then((result) => {
 				console.log("Sent done!");
 				console.log(result);
-			}, function (reason) {
+			},(reason) => {
 				console.log("Error!");
 				console.log(reason);
 			});
