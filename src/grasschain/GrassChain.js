@@ -86,7 +86,7 @@ class GrassChain extends React.Component {
 				from: '0x8CAd9B4941aAfb67b5A5e6DeA657Db2d4ea7b757',
 				to: contractAddr,
 				value: web3.utils.toWei('0.01', 'ether')
-			}).then(function (result) {
+			}).then((result) => {
 				console.log("Sent done!");
 				console.log(result);
 			}, function (reason) {
