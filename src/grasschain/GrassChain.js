@@ -27,7 +27,7 @@ class GrassChain extends React.Component {
 			this.setState({
 				userAddress: address
 			})
-		}.bind(this));
+		});
 
 		GrassChain.methods.GSCCount().call().then((result) => {
 			console.log(result);
