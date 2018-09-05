@@ -50,7 +50,7 @@ class GrassChain extends React.Component {
 							console.log("Error!");
 							console.log(reason);
 			});
-			*/ㄹ
+			*/
 		});
 
 		const getGSCData = async (GSCID) => {
