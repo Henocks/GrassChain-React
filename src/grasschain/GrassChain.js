@@ -15,7 +15,7 @@ class GrassChain extends React.Component {
 		const contractAddr = "0xE8720CB8b80ffb4D93BeE736C624dc547603fc49";
 		const web3 = new Web3(Web3.givenProvider);
 		const GrassChain = new web3.eth.Contract(ABI, contractAddr);
-		let GSCID = 2;
+		const GSCID = 2;
 
 		console.log(Promise.resolve(getAddress()));
 
