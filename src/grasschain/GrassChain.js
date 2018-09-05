@@ -2,12 +2,10 @@ import React from 'react';
 import Web3 from 'web3';
 
 class GrassChain extends React.Component {
-	constructor() {
-		super();
-		this.state = {
-			userAddress: 0
-		};
-	}
+	state = {
+		userAddress: 0
+	};
+
 
 	numberComma = (x) => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -18,7 +16,6 @@ class GrassChain extends React.Component {
 		const contractAddr = "0xE8720CB8b80ffb4D93BeE736C624dc547603fc49";
 		const web3 = new Web3(Web3.givenProvider);
 		const GrassChain = new web3.eth.Contract(ABI, contractAddr);
-
 		let GSCID = 2;
 
 		console.log(Promise.resolve(getAddress()));
@@ -89,7 +86,7 @@ class GrassChain extends React.Component {
 			}).then((result) => {
 				console.log("Sent done!");
 				console.log(result);
-			},(reason) => {
+			}, (reason) => {
 				console.log("Error!");
 				console.log(reason);
 			});
