@@ -6,7 +6,6 @@ class GrassChain extends React.Component {
 		userAddress: 0
 	};
 
-
 	numberComma = (x) => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
@@ -79,17 +78,17 @@ class GrassChain extends React.Component {
 		let GrassChain = new web3.eth.Contract(ABI, contractAddr);
 
 		GrassChain.methods.pay(2).send(         // TO-DO : need to be refactored! - Dummy data.
-			{
-				from: '0x8CAd9B4941aAfb67b5A5e6DeA657Db2d4ea7b757',
-				to: contractAddr,
-				value: web3.utils.toWei('0.01', 'ether')
-			}).then((result) => {
-				console.log("Sent done!");
-				console.log(result);
-			}, (reason) => {
-				console.log("Error!");
-				console.log(reason);
-			});
+		{
+			from: '0x8CAd9B4941aAfb67b5A5e6DeA657Db2d4ea7b757',
+			to: contractAddr,
+			value: web3.utils.toWei('0.01', 'ether')
+		}).then((result) => {
+			console.log("Sent done!");
+			console.log(result);
+		}, (reason) => {
+			console.log("Error!");
+			console.log(reason);
+		});
 	}
 
 	render() {
