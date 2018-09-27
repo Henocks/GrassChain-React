@@ -103,4 +103,11 @@ class GrassChain extends React.Component {
 
 }
 
+splitDecimal = (number) => {
+  const preP = /.+(?=[.])/.exec(number);
+
+  return preP.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "." + /(?<=[.]).+/.exec(number);
+}
+
+
 export default GrassChain;
