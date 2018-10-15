@@ -31,7 +31,6 @@ class GrassCoin extends React.Component {
         })
       })
     });
-    
 
     //getAddress and create purchase GSC
     Promise.all([getAddress()]).then((address) => {
