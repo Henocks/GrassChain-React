@@ -108,7 +108,7 @@ contract GrassChain {
 
     /// Confirmation&Payment of Customer
     /// 송금 작업 진행
-    function pay(uint GSCID) public payable
+    function pay(uint256 GSCID) public payable
         //onlyCustomer
         //inState(State.Locked)
     {
