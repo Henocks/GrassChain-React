@@ -112,5 +112,4 @@ const splitDecimal = (number) => {
   return preP + "." + postP;
 }
 
-
 export default GrassChain;
