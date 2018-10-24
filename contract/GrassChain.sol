@@ -9,7 +9,7 @@ contract GrassChain {
         uint prodCert;      // 생산자의 인증 정보 (유기농, 무농약 등)
     }
 
-    struct GSC { //grasschain supply chain
+    struct GSC {              //grasschain supply chain
         address mainWallet;   // GRC 분배를 위한 중앙 지갑 주소 = 0x669795B7e30a4A56AE8BfF70efe6f48cDB3f73AD;
         address[] Gchain;     // 공급망 정보
         uint value;           // 계약에 따라 설정된 판매가
