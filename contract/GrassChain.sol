@@ -32,8 +32,8 @@ contract GrassChain {
     * uint[]    Gchain_dist = [40, 30, 29, 0]; 
     */
 
-    uint public GSCCount = 0;
-    mapping (uint => GSC) public GSCList; //map id to GSC struct   prev : GSC[] GSCList;
+    uint256 public GSCCount = 0;
+    mapping (uint256 => GSC) public GSCList; //map id to GSC struct   prev : GSC[] GSCList;
 
     function createGSC(address[] Gchain, uint value, uint[] ratio) public payable returns (uint GSCID)
     {
